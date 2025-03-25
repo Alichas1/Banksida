@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { useRouter } from "next/navigation";
 import { useLogin } from "@/context/LoginContext";
+import Link from "next/link";
 
 export default function Login() {
   const [username, setUsername] = useState("");
@@ -31,8 +32,6 @@ export default function Login() {
     } else {
       alert("Fel vid inloggning");
     }
-
-    alert("Inloggad (simulerad, backend inte implementerad än)");
   };
 
   const handleGoBack = () => {
@@ -40,16 +39,21 @@ export default function Login() {
   };
 
   return (
-    <div className="h-screen flex justify-center items-center relative">
+    <div className="h-screen flex justify-center items-center relative bg-green-700">
+      <Link href={"/"}>
+        <h1 className="absolute top-4 left-4 text-4xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-green-500 to-green-100 mt-[-10px] ">
+          Broke Bank
+        </h1>
+      </Link>
       <button
         onClick={handleGoBack}
-        className="absolute top-4 left-4 bg-blue-500 text-white p-2 rounded-md hover:bg-blue-600"
+        className="absolute top-4 left-4 mt-10 bg-blue-500 text-white p-2 rounded-md hover:bg-blue-600"
       >
         Go back
       </button>
 
       <div className="w-full max-w-sm">
-        <h1 className="text-center mb-4 text-3xl">Logga in</h1>
+        <h1 className="text-center mb-4 text-3xl text-white">Logga in</h1>
 
         <form
           onSubmit={handleLogin}

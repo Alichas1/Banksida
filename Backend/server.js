@@ -25,7 +25,7 @@ app.post("/users", (req, res) => {
   const user = { id: userId, username, password };
   users.push(user);
 
-  const balance = { id: balanceIds++, userId: userId, amount: 100 };
+  const balance = { id: balanceIds++, userId: userId, amount: 0 };
 
   balances.push(balance);
 
@@ -58,30 +58,39 @@ app.post("/accounts", (req, res) => {
   const session = sessions.find((session) => session.otp === parseInt(otp));
 
   if (session) {
-    const username = sessions.username;
-
     const userId = session.userId;
+    const balance = balances.find((balance) => balance.userId === userId);
 
-    const balance = balances.find((balance) => balance.userId == userId);
-
-    res.json(400).json({ amount: balance.amount });
+    if (balance) {
+      res.json({ amount: balance.amount });
+      res.status(400).json({ message: "Balance not found" });
+    }
   } else {
-    res.json(400).json({ message: "invalid OTP" });
+    res.status(400).json({ message: "Invalid OTP" });
   }
 });
 
 //skickar pengar till användarkonto
 app.post("/me/accounts/transactions", (req, res) => {
   const { otp, amount } = req.body;
-  const sessions = sessions.find((s) => s.otp === parseInt(otp));
 
-  if (sessions) {
-    const username = sessions.username;
-    balances[username] += amount;
-    res.json({ balances: balances[username] });
-  } else {
-    res.status(400).json({ message: "Invalid OTP" });
+  const session = sessions.find((s) => s.otp === parseInt(otp));
+
+  if (!session) {
+    return res.status(400).json({ message: "Invalid OTP" });
   }
+
+  const balance = balances.find((balance) => balance.userId === session.userId);
+
+  if (!balance) {
+    return res.status(400).json({ message: "Balance not found" });
+  }
+
+  balance.amount += amount;
+
+  res.json({ amount: balance.amount });
+
+  console.log("balance:", balance);
 });
 
 app.listen(PORT, () => {

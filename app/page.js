@@ -6,10 +6,22 @@ export default function Homesida() {
       {/* Sticky Navbar */}
       <header className="sticky top-0 w-full bg-green-900 text-white h-18 z-50">
         <div className="flex justify-between px-8 py-7">
-          <h1 className="text-2xl">Broke Bank</h1>
+          <h1 className="text-4xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-green-500 to-green-100 mt-[-10px] ">
+            Broke Bank
+          </h1>
           <nav className="flex gap-5">
-            <Link href="/login">logga in</Link>
-            <Link href="/signup">skapa användare</Link>
+            <Link
+              href="/login"
+              className="font-semibold text-xl text-transparent bg-clip-text bg-gradient-to-r from-green-200 to-green-500 "
+            >
+              Logga in
+            </Link>
+            <Link
+              href="/signup"
+              className="font-semibold text-xl text-transparent bg-clip-text bg-gradient-to-r from-green-200 to-green-500 "
+            >
+              Skapa användare
+            </Link>
           </nav>
         </div>
       </header>
@@ -39,72 +51,71 @@ export default function Homesida() {
         </div>
       </div>
 
-      <div className="mt-10">
-        <div className="flex justify-center gap-3 items-center space-x-4">
-          <div className="flex flex-col items-center">
-            <h2 className="text-xl text-black mb-2">Lånelöfte</h2>
-            <div className="flex flex-col justify-center items-center h-40 w-70 bg-green-400 rounded-lg hover:bg-green-500 ">
-              <div className="p-3 w-52 text-xl text-white bg-white rounded-full">
-                <p className="text-black text-center">skaffa lånelöfte</p>
-              </div>
+      <div className="mt-10 flex flex-wrap justify-center gap-3">
+        <div className="flex flex-col items-center w-full sm:w-1/2 md:w-1/4">
+          <h2 className="text-xl text-black mb-2">Lånelöfte</h2>
+          <div className="flex flex-col justify-center items-center h-40 w-70 bg-green-400 rounded-lg hover:bg-green-500">
+            <div className="p-3 w-52 text-xl text-white bg-white rounded-full">
+              <p className="text-black text-center">skaffa lånelöfte</p>
             </div>
           </div>
+        </div>
 
-          <div className="flex flex-col items-center">
-            <h2 className="text-xl text-black mb-2">Lånelöfte</h2>
-            <div className="flex flex-col justify-center items-center h-40 w-70 bg-green-400 rounded-lg hover:bg-green-500 ">
-              <div className="p-3 w-52 text-xl text-white bg-white rounded-full">
-                <p className="text-black text-center">skaffa lånelöfte</p>
-              </div>
+        <div className="flex flex-col items-center w-full sm:w-1/2 md:w-1/4">
+          <h2 className="text-xl text-black mb-2">Lånelöfte</h2>
+          <div className="flex flex-col justify-center items-center h-40 w-70 bg-green-400 rounded-lg hover:bg-green-500">
+            <div className="p-3 w-52 text-xl text-white bg-white rounded-full">
+              <p className="text-black text-center">skaffa lånelöfte</p>
             </div>
           </div>
+        </div>
 
-          <div className="flex flex-col items-center">
-            <h2 className="text-xl text-black mb-2">Lånelöfte</h2>
-            <div className="flex flex-col justify-center items-center h-40 w-70 bg-green-400 rounded-lg hover:bg-green-500 ">
-              <div className="p-3 w-52 text-xl text-white bg-white rounded-full">
-                <p className="text-black text-center">skaffa lånelöfte</p>
-              </div>
+        <div className="flex flex-col items-center w-full sm:w-1/2 md:w-1/4">
+          <h2 className="text-xl text-black mb-2">Lånelöfte</h2>
+          <div className="flex flex-col justify-center items-center h-40 w-70 bg-green-400 rounded-lg hover:bg-green-500">
+            <div className="p-3 w-52 text-xl text-white bg-white rounded-full">
+              <p className="text-black text-center">skaffa lånelöfte</p>
             </div>
           </div>
+        </div>
 
-          <div className="flex flex-col items-center">
-            <h2 className="text-xl text-black mb-2">Lånelöfte</h2>
-            <div className="flex flex-col justify-center items-center h-40 w-70 bg-green-400 rounded-lg hover:bg-green-500 ">
-              <div className="p-3 w-52 text-xl text-white bg-white rounded-full">
-                <p className="text-black text-center">skaffa lånelöfte</p>
-              </div>
+        <div className="flex flex-col items-center w-full sm:w-1/2 md:w-1/4">
+          <h2 className="text-xl text-black mb-2">Lånelöfte</h2>
+          <div className="flex flex-col justify-center items-center h-40 w-70 bg-green-400 rounded-lg hover:bg-green-500">
+            <div className="p-3 w-52 text-xl text-white bg-white rounded-full">
+              <p className="text-black text-center">skaffa lånelöfte</p>
             </div>
           </div>
         </div>
       </div>
-      <div className="flex justify-center items-center gap-12 mt-20 bg-gray-50">
-        <div className="text-center cursor-pointer transition hover:scale-105">
+
+      <div className="flex justify-center items-center gap-12 mt-20 bg-green-100">
+        <div className="text-center cursor-pointer transition hover:scale-105 mt-4">
           <h2 className="text-xl text-black mb-2 font-semibold">BankID</h2>
           <img
             src="/BankID .png"
             alt="Bank logo"
-            className="h-64 w-72 border-4 border-gray-200 rounded-lg  "
+            className="h-64 w-72 border-4 border-green-400 rounded-lg  "
           ></img>
         </div>
 
-        <div className="text-center cursor-pointer transition hover:scale-105">
+        <div className="text-center cursor-pointer transition hover:scale-105 mt-4">
           <h2 className="text-xl text-black mb-2 font-semibold">Swish</h2>
           <img
             src="/SwishLogo.png"
             alt="swish"
-            className="h-64 w-72 border-4 border-gray-200 rounded-lg  "
+            className="h-64 w-72 border-4 border-green-400 rounded-lg  "
           ></img>
         </div>
 
-        <div className="text-center cursor-pointer transition hover:scale-105">
+        <div className="text-center cursor-pointer transition hover:scale-105 mt-4">
           <h2 className="text-xl text-black mb-2 font-semibold">
             DigitaltKort
           </h2>
           <img
             src="/digitalt.jpg"
             alt="Digitalt"
-            className="h-64 w-72 border-4 border-gray-200 rounded-lg "
+            className="h-64 w-72 border-4 border-green-400 rounded-lg "
           ></img>
         </div>
       </div>
